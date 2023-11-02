@@ -71,12 +71,12 @@ pipeline {
         )
         string(
             name: 'installation_user',
-            defaultValue: 'REPLACE_THIS',
+            defaultValue: 'azureadmin',
             description: '<h5>Username that will run the installation</h5>'
         )
         string(
             name: 'private_key_credential',
-            defaultValue: 'REPLACE_THIS',
+            defaultValue: 'Infy@123',
             description: '<h5>Jenkins credential holding the private key to connect to the target nodes</h5>'
         )
         string(
