@@ -27,17 +27,14 @@ node2 ansible_host=20.172.184.73  # ip=10.3.0.2 etcd_member_name=etcd2
 [kube_control_plane]
 node1
 node2
-node3
 
 [etcd]
 node1
 node2
-node3
 
 [kube_node]
-node4
-node5
-node6
+node1
+node2
 
 [calico_rr]
 # Calico advanced options: https://github.com/kubernetes-sigs/kubespray/blob/master/docs/calico.md
@@ -66,7 +63,7 @@ cert_manager_enabled: false
 '''
 
 pipeline {
-	agent any
+    agent any
     parameters {
         string(
             name: 'ansible_installation',
