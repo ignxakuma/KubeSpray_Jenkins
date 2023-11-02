@@ -66,7 +66,7 @@ cert_manager_enabled: false
 '''
 
 pipeline {
-	agent { label 'ansible' }
+	agent any
     parameters {
         string(
             name: 'ansible_installation',
