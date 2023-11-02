@@ -15,9 +15,9 @@ def inventorySample = '''# ## Configure 'ip' variable to bind kubernetes service
 ansible_become_pass='{{ user_sudo_pass }}' 
 
 [all]
-node1 ansible_host=95.54.0.12  # ip=10.3.0.1 etcd_member_name=etcd1
-node2 ansible_host=95.54.0.13  # ip=10.3.0.2 etcd_member_name=etcd2
-node3 ansible_host=95.54.0.14  # ip=10.3.0.3 etcd_member_name=etcd3
+node1 ansible_host=20.172.190.175  # ip=10.3.0.1 etcd_member_name=etcd1
+node2 ansible_host=20.172.184.73  # ip=10.3.0.2 etcd_member_name=etcd2
+#node3 ansible_host=95.54.0.14  # ip=10.3.0.3 etcd_member_name=etcd3
 
 
 # ## configure a bastion host if your nodes are not directly reachable
@@ -67,11 +67,6 @@ cert_manager_enabled: false
 
 pipeline {
 	agent { label 'ansible' }
-	options {
-		ansiColor('gnome-terminal')		
-		buildDiscarder(logRotator(daysToKeepStr: '90'))
-		}
-    
     parameters {
         string(
             name: 'ansible_installation',
